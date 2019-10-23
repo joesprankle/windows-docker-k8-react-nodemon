@@ -14,7 +14,7 @@ pod.yaml, k8 file to create your app and pull in your local storage as a volume 
 
 ingress.yaml, basic ingress to pull it all together
 
-HOWTO:
+## HOWTO:
 
 ### Build the container:
 docker build -t react:app .
