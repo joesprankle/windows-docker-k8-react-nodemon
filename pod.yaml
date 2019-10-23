@@ -1,0 +1,29 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: reactsite
+  labels:
+    app: reactsite  
+spec:
+  containers:
+  - name: reactapp
+    image: react:app
+    volumeMounts:
+    - name: app-storage
+      mountPath: /app
+  volumes:
+  - name: app-storage
+    hostPath:
+      path: /c/Users/joesprankle/Desktop/my-app
+    
+---
+
+kind: Service
+apiVersion: v1
+metadata:
+  name: react-service
+spec:
+  selector:
+    app: reactsite
+  ports:
+    - port: 3000 # Default port for image
